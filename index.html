@@ -20,8 +20,8 @@
         
         <div class='container'>
            <div class='title'>Typing</div>
-           <div class='word animated infinite bounce delay-5s'>Word</div>
-           <form action="">
+           <div id='targetWord' class='word animated infinite bounce delay-5s'>Word</div>
+           <form onSubmit="wordSubmitted()">
                <input id='entryBox' type="text">
            </form>
         </div>
