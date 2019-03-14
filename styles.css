@@ -1,3 +1,30 @@
 body {
     background-color: black;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Lilita One', cursive;
+}
+
+.container {
+    margin: auto;
+    width: 75%;
+}
+
+.title {
+    font-size: 5em;
+}
+
+.word {
+    margin-top: 5em;
+    font-size: 3em;
+}
+
+#entryBox {
+    margin-top: 5em;
+    font-size: 3em;
+    background-color: black;
+    color: lightblue;
+    text-align: center;
+    border: none;
+    font-family: 'Lilita One', cursive;
 }
