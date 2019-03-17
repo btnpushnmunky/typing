@@ -20,17 +20,11 @@
         
         <div class='container'>
            <div class='title'>Typing</div>
-           <div id='targetWord' class='word animated infinite bounce delay-5s'>Word</div>
-           <form onSubmit="wordSubmitted()">
+           <div id='targetWord' class='word animated infinite bounce delay-5s'></div>
+           <form id="typingForm" onSubmit="wordSubmitted()" autocomplete="off">
                <input id='entryBox' type="text">
            </form>
         </div>
         <script src="game.js" async defer></script>
-        <script>
-            function focusTextField() {
-                document.getElementById('entryBox').focus();
-            };
-            focusTextField();
-        </script>
     </body>
 </html>
