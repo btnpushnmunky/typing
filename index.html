@@ -20,7 +20,10 @@
         
         <div class='container'>
            <div class='title'>Typing</div>
-           <div id="scoreContainer">Score: <span id="score"></span></div>
+           <div id="scoreAndTimerDiv">
+                <span id="scoreContainer">Score: <span id="score"></span></span>
+                <span id="timerContainer">Time left: <span id="timer"></span></span>
+           </div>
            <div id='targetWord' class='word animated infinite bounce delay-5s'></div>
            <form id="typingForm" onSubmit="wordSubmitted()" autocomplete="off">
                <input id='entryBox' type="text">

@@ -4,7 +4,10 @@ let wordList = ["word", "typing", "banana", "apple", "boogers"];
 
 const targetWordDiv = document.getElementById("targetWord");
 const scoreSpan = document.getElementById("score");
+const timerSpan = document.getElementById("timer");
+
 let score = 0;
+let timer = 60;
 
 
 function setScore() {
@@ -44,3 +47,4 @@ window.onload=function() {
 focusTextField();
 setWord();
 scoreSpan.innerHTML = score;
+timerSpan.innerHTML = timer;
