@@ -1,0 +1,19 @@
+{
+  "name": "typing",
+  "version": "1.0.0",
+  "description": "Just a little typing game",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btnpushnmunky/typing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/btnpushnmunky/typing/issues"
+  },
+  "homepage": "https://github.com/btnpushnmunky/typing#readme"
+}
