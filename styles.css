@@ -28,3 +28,8 @@ body {
     border-color: darkgrey;
     font-family: 'Lilita One', cursive;
 }
+
+#scoreContainer {
+    margin-top: 3em;
+    font-size: 2em;
+}
