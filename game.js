@@ -23,7 +23,11 @@ function wordSubmitted() {
     let typedWord = document.getElementById("entryBox").value;
     let targetWord = document.getElementById("targetWord").innerHTML;
     if (typedWord == targetWord) {
-        setWord();
+        targetWordDiv.className = "word animated rollOut";
+        targetWordDiv.addEventListener("animationend", function () { 
+            targetWordDiv.className = "word animated infinite bounce";
+            setWord();
+        });
         score += 1;
         setScore();
         document.getElementById("entryBox").value = "";
@@ -31,11 +35,7 @@ function wordSubmitted() {
     }
 }
 
-function focusTextField() {
-    document.getElementById("entryBox").focus();
-}
-
-
+// Prevent the default page reload when enter is pressed. We just want it to reset the word
 window.onload=function() {
     document.getElementById("typingForm").onsubmit = function () {
         wordSubmitted();
@@ -44,7 +44,7 @@ window.onload=function() {
 };
 
 //Do some initial setup
-focusTextField();
-setWord();
-scoreSpan.innerHTML = score;
+document.getElementById("entryBox").focus(); // Set focus to the input
+setWord(); // Set the initial word
+setScore(); // Set the score
 timerSpan.innerHTML = timer;
