@@ -9,7 +9,6 @@ const timerSpan = document.getElementById("timer");
 let score = 0;
 let timer = 60;
 
-
 function setScore() {
     scoreSpan.innerHTML = score;    
 }
@@ -23,6 +22,7 @@ function wordSubmitted() {
     let typedWord = document.getElementById("entryBox").value;
     let targetWord = document.getElementById("targetWord").innerHTML;
     if (typedWord == targetWord) {
+        // Roll out animation when the correct word is typed
         targetWordDiv.className = "word animated rollOut";
         targetWordDiv.addEventListener("animationend", function () { 
             targetWordDiv.className = "word animated infinite bounce";
@@ -34,6 +34,22 @@ function wordSubmitted() {
 
     }
 }
+
+function time() {
+
+    let time = 60;
+    var timer = setInterval(timerCount, 1000);
+    function timerCount() {
+        if (time == 0) {
+            clearInterval(timer);
+            alert("Out of time");
+        } else {
+            time--;
+            timerSpan.innerHTML = time;
+        }
+    }
+}
+
 
 // Prevent the default page reload when enter is pressed. We just want it to reset the word
 window.onload=function() {
@@ -48,3 +64,4 @@ document.getElementById("entryBox").focus(); // Set focus to the input
 setWord(); // Set the initial word
 setScore(); // Set the score
 timerSpan.innerHTML = timer;
+time();
