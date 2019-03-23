@@ -31,18 +31,16 @@ function wordSubmitted() {
         score += 1;
         setScore();
         document.getElementById("entryBox").value = "";
-
     }
 }
 
 function time() {
-
     let time = 60;
     var timer = setInterval(timerCount, 1000);
     function timerCount() {
         if (time == 0) {
             clearInterval(timer);
-            alert("Out of time");
+            alert("Out of time. Your score is " + score + ".");
         } else {
             time--;
             timerSpan.innerHTML = time;
@@ -63,5 +61,5 @@ window.onload=function() {
 document.getElementById("entryBox").focus(); // Set focus to the input
 setWord(); // Set the initial word
 setScore(); // Set the score
-timerSpan.innerHTML = timer;
-time();
+timerSpan.innerHTML = timer; // Set initial timer value
+time(); // Start the timer
