@@ -23,8 +23,8 @@ function wordSubmitted() {
     let targetWord = document.getElementById("targetWord").innerHTML;
     if (typedWord == targetWord) {
         // Roll out animation when the correct word is typed
-        targetWordDiv.className = "word animated rollOut";
-        targetWordDiv.addEventListener("animationend", function () { 
+        targetWordDiv.className = "word animated zoomOut faster";
+        targetWordDiv.addEventListener("animationend", () => { 
             targetWordDiv.className = "word animated infinite bounce";
             setWord();
         });
@@ -36,22 +36,15 @@ function wordSubmitted() {
 
 function time() {
     let time = 60;
-    var timer = setInterval(timerCount, 1000);
+    let timer = setInterval(timerCount, 1000);
     function timerCount() {
         if (time == 0) {
+            targetWordDiv.className = "word";
             clearInterval(timer);
             alert("Out of time. Your score is " + score + ".");
             score = 0;
             setScore();
-            let resetButton = document.createElement("button");
-            resetButton.textContent = "Click to Try Again";
-            document.body.append(resetButton);
-            targetWordDiv.className = "word";            
-            resetButton.className = "btn btn-primary";
-            resetButton.type = "button";
-            resetButton.addEventListener("click", () => {
-                location.reload();
-            });
+            createResetButton();
         } else {
             time--;
             timerSpan.innerHTML = time;
@@ -59,9 +52,22 @@ function time() {
     }
 }
 
+function createResetButton() {
+    let resetButton = document.createElement("button");
+    resetButton.textContent = "Click to Try Again";
+    document.body.append(resetButton);
+    targetWordDiv.className = "word";            
+    resetButton.className = "btn btn-primary";
+    resetButton.type = "button";
+    resetButton.addEventListener("click", () => {
+        location.reload();
+    });
+
+}
+
 // Prevent the default page reload when enter is pressed. We just want it to reset the word
-window.onload=function() {
-    document.getElementById("typingForm").onsubmit = function () {
+window.onload = () => {
+    document.getElementById("typingForm").onsubmit = () => {
         wordSubmitted();
         return false;
     };
