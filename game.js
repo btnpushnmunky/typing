@@ -41,13 +41,23 @@ function time() {
         if (time == 0) {
             clearInterval(timer);
             alert("Out of time. Your score is " + score + ".");
+            score = 0;
+            setScore();
+            let resetButton = document.createElement("button");
+            resetButton.textContent = "Click to Try Again";
+            document.body.append(resetButton);
+            targetWordDiv.className = "word";            
+            resetButton.className = "btn btn-primary";
+            resetButton.type = "button";
+            resetButton.addEventListener("click", () => {
+                location.reload();
+            });
         } else {
             time--;
             timerSpan.innerHTML = time;
         }
     }
 }
-
 
 // Prevent the default page reload when enter is pressed. We just want it to reset the word
 window.onload=function() {
