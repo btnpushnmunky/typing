@@ -1,6 +1,6 @@
 /* exported wordSubmitted */
 
-let wordList = ["word", "typing", "banana", "apple", "boogers"];
+// let wordList = ["word", "typing", "banana", "apple", "boogers"];
 
 const targetWordDiv = document.getElementById("targetWord");
 const scoreSpan = document.getElementById("score");
